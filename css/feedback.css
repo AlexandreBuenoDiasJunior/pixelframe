@@ -1,0 +1,128 @@
+/* ===================================================
+   COMPONENTES DE FEEDBACK — alertas, badges, toast, modal
+   =================================================== */
+
+/* ---------- ALERTAS ---------- */
+.alerta {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espaco-2);
+  padding: var(--espaco-3) var(--espaco-4);
+  border-radius: var(--raio-borda);
+  border: 1px solid transparent;
+  margin-bottom: var(--espaco-3);
+  font-size: 0.95rem;
+}
+.alerta strong { display: block; margin-bottom: 2px; }
+
+.alerta-sucesso {
+  background: var(--cor-secundaria-100);
+  border-color: var(--cor-secundaria-500);
+  color: var(--cor-secundaria-600);
+}
+.alerta-erro {
+  background: var(--cor-erro-100);
+  border-color: var(--cor-erro-500);
+  color: var(--cor-erro-500);
+}
+.alerta-aviso {
+  background: var(--cor-alerta-100);
+  border-color: var(--cor-alerta-500);
+  color: #7A5E08;
+}
+
+/* ---------- BADGES ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px var(--espaco-3);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.badge-educacao { background: var(--cor-primaria-100); color: var(--cor-primaria-600); }
+.badge-saude    { background: var(--cor-erro-100); color: var(--cor-erro-500); }
+.badge-ambiente { background: var(--cor-secundaria-100); color: var(--cor-secundaria-600); }
+.badge-pendente { background: var(--cor-alerta-100); color: #7A5E08; }
+.badge-row { display: flex; gap: var(--espaco-2); flex-wrap: wrap; }
+
+/* ---------- TOAST ---------- */
+.toast-container {
+  position: fixed;
+  bottom: var(--espaco-4);
+  right: var(--espaco-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-2);
+  z-index: 50;
+}
+.toast {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-2);
+  background: var(--cor-neutra-900);
+  color: #fff;
+  padding: var(--espaco-3) var(--espaco-4);
+  border-radius: var(--raio-borda);
+  box-shadow: 0 8px 24px rgba(0,0,0,.2);
+  font-size: 0.9rem;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+.toast.mostrar { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.toast .ponto-sucesso {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--cor-secundaria-500); flex-shrink: 0;
+}
+
+/* ---------- MODAL ---------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20,22,26,.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s;
+}
+.modal-overlay.aberto { opacity: 1; visibility: visible; }
+
+.modal-caixa {
+  background: #fff;
+  border-radius: var(--raio-borda);
+  padding: var(--espaco-4);
+  max-width: 380px;
+  width: 90%;
+  transform: scale(0.95);
+  transition: transform 0.2s ease;
+}
+.modal-overlay.aberto .modal-caixa { transform: scale(1); }
+
+.modal-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--espaco-3);
+  margin-bottom: var(--espaco-2);
+}
+.modal-topo h3 { margin: 0; }
+.modal-fechar {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--cor-neutra-600);
+  line-height: 1;
+}
+.modal-acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--espaco-2);
+  margin-top: var(--espaco-4);
+}

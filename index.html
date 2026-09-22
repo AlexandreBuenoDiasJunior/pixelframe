@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PixelFrame — Plataforma Terceiro Setor</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/grid.css">
+<link rel="stylesheet" href="css/flexbox.css">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/estados.css">
+<link rel="stylesheet" href="css/feedback.css">
+</head>
+<body>
+
+<!-- ===== NAVEGAÇÃO ===== -->
+<nav class="nav-principal">
+  <a href="#" class="nav-logo"><strong>PixelFrame</strong></a>
+
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">
+  <label for="nav-toggle" class="nav-hamburguer" aria-label="Abrir menu">
+    <span></span><span></span><span></span>
+  </label>
+
+  <ul class="nav-lista">
+    <li><a href="#">Início</a></li>
+    <li class="nav-item-dropdown">
+      <a href="#">Projetos</a>
+      <ul class="nav-dropdown">
+        <li><a href="#">Educação</a></li>
+        <li><a href="#">Saúde</a></li>
+        <li><a href="#">Meio ambiente</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Doar</a></li>
+    <li><a href="#">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- ===== GRID PRINCIPAL ===== -->
+<div class="grid-container" style="margin-top: 2rem;">
+
+  <header class="area-header">
+    <h1>Transformando doações em impacto real</h1>
+    <p>Conectamos doadores, voluntários e organizações do terceiro setor em uma única plataforma.</p>
+  </header>
+
+  <aside class="area-aside">
+    <h3>Categorias</h3>
+    <div class="badge-row" style="flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+      <span class="badge badge-educacao">Educação</span>
+      <span class="badge badge-saude">Saúde</span>
+      <span class="badge badge-ambiente">Meio ambiente</span>
+      <span class="badge badge-pendente">Pendente</span>
+    </div>
+  </aside>
+
+  <main class="area-main">
+
+    <section>
+      <h2>Feedback visual</h2>
+      <div class="alerta alerta-sucesso">
+        <div><strong>Doação confirmada</strong>Seu apoio foi processado com sucesso.</div>
+      </div>
+      <div class="alerta alerta-erro">
+        <div><strong>Erro no envio</strong>Não foi possível salvar o formulário. Tente novamente.</div>
+      </div>
+      <div class="alerta alerta-aviso">
+        <div><strong>Atenção</strong>Alguns campos opcionais não foram preenchidos.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projeto em destaque</h2>
+      <div class="cartao-flex">
+        <div class="cartao-topo">
+          <span class="badge badge-educacao">Educação</span>
+        </div>
+        <h3>Biblioteca comunitária</h3>
+        <p>Levando acesso a livros e reforço escolar para crianças em situação de vulnerabilidade.</p>
+        <div class="cartao-rodape">
+          <button class="btn-primario">Apoiar projeto</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Formulário de contato</h2>
+      <form class="campo-grupo-flex" novalidate>
+        <div class="campo-flex" style="flex: 1 1 200px;">
+          <label for="nome">Nome completo</label>
+          <input class="campo-input" id="nome" type="text" required>
+          <span class="campo-erro-msg">Informe seu nome completo.</span>
+        </div>
+        <div class="campo-flex" style="flex: 1 1 200px;">
+          <label for="email">E-mail</label>
+          <input class="campo-input" id="email" type="email" required>
+          <span class="campo-erro-msg">Informe um e-mail válido.</span>
+        </div>
+      </form>
+      <br>
+      <button class="btn-primario" onclick="mostrarToast()">Enviar</button>
+      <button class="btn-primario" disabled>Indisponível</button>
+    </section>
+
+    <section>
+      <h2>Modal de confirmação</h2>
+      <button class="btn-primario" onclick="abrirModal()">Abrir modal</button>
+    </section>
+
+  </main>
+
+  <footer class="area-footer">
+    <p class="legenda">PixelFrame — Exp. Prática 2 / Estilização e layouts</p>
+  </footer>
+
+</div>
+
+<!-- ===== TOAST ===== -->
+<div class="toast-container">
+  <div class="toast" id="toast">
+    <span class="ponto-sucesso"></span>
+    Alterações salvas com sucesso.
+  </div>
+</div>
+
+<!-- ===== MODAL ===== -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-caixa">
+    <div class="modal-topo">
+      <h3>Confirmar doação</h3>
+      <button class="modal-fechar" onclick="fecharModal()" aria-label="Fechar">×</button>
+    </div>
+    <p>Você está prestes a confirmar uma doação de R$ 50,00 para o projeto de Educação. Deseja continuar?</p>
+    <div class="modal-acoes">
+      <button class="btn-secundario" onclick="fecharModal()">Cancelar</button>
+      <button class="btn-primario" onclick="fecharModal()">Confirmar</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

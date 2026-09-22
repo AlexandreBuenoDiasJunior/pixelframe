@@ -1,0 +1,101 @@
+/* ===================================================
+   ESTADOS INTERATIVOS — Botões e Formulários
+   =================================================== */
+
+.btn-primario {
+  background: var(--cor-primaria-500);
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: var(--raio-borda);
+  padding: var(--espaco-2) var(--espaco-4);
+  font-weight: 600;
+  font-family: var(--fonte-base);
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(20, 22, 26, 0.08);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease,
+              transform 0.1s ease, border-color 0.2s ease;
+}
+
+.btn-primario:hover {
+  background: var(--cor-primaria-600);
+  box-shadow: 0 4px 10px rgba(45, 91, 255, 0.25);
+}
+
+.btn-primario:focus-visible {
+  outline: none;
+  border-color: var(--cor-secundaria-500);
+  box-shadow: 0 0 0 3px rgba(46, 158, 107, 0.35);
+}
+
+.btn-primario:active {
+  transform: scale(0.97);
+  background: var(--cor-primaria-600);
+  box-shadow: 0 1px 2px rgba(20, 22, 26, 0.1);
+}
+
+.btn-primario:disabled {
+  background: var(--cor-neutra-300);
+  color: var(--cor-neutra-600);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.btn-secundario {
+  background: var(--cor-neutra-100);
+  color: var(--cor-neutra-900);
+  border: 1px solid var(--cor-neutra-300);
+  padding: var(--espaco-2) var(--espaco-4);
+  border-radius: var(--raio-borda);
+  cursor: pointer;
+  font-family: var(--fonte-base);
+}
+
+/* ---------- CAMPOS DE FORMULÁRIO ---------- */
+
+.campo-input {
+  width: 100%;
+  padding: var(--espaco-2) var(--espaco-3);
+  border: 1.5px solid var(--cor-neutra-300);
+  border-radius: var(--raio-borda);
+  background: #fff;
+  font-family: var(--fonte-base);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.campo-input:hover {
+  border-color: var(--cor-neutra-600);
+}
+
+.campo-input:focus-visible {
+  outline: none;
+  border-color: var(--cor-primaria-500);
+  box-shadow: 0 0 0 3px rgba(45, 91, 255, 0.15);
+}
+
+.campo-input:user-valid {
+  border-color: var(--cor-secundaria-500);
+  background: var(--cor-secundaria-100);
+}
+
+.campo-input:user-invalid {
+  border-color: var(--cor-erro-500);
+  background: var(--cor-erro-100);
+}
+
+.campo-erro-msg {
+  display: none;
+  color: var(--cor-erro-500);
+  font-size: var(--fonte-tamanho-5);
+  margin-top: var(--espaco-1);
+}
+
+.campo-input:user-invalid ~ .campo-erro-msg {
+  display: block;
+}
+
+.campo-input:disabled {
+  background: var(--cor-neutra-100);
+  color: var(--cor-neutra-600);
+  cursor: not-allowed;
+}

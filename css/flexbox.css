@@ -1,0 +1,78 @@
+/* ===================================================
+   FLEXBOX — Alinhamento de componentes internos
+   =================================================== */
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--espaco-4);
+  padding: var(--espaco-3) var(--espaco-4);
+}
+
+.nav-flex {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cartao-flex {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-2);
+  padding: var(--espaco-4);
+  background: var(--cor-neutra-0);
+  border: 1px solid var(--cor-neutra-300);
+  border-radius: var(--raio-borda);
+}
+
+.cartao-flex .cartao-topo {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-2);
+}
+
+.cartao-flex .cartao-rodape {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: auto;
+}
+
+.campo-flex {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-1);
+}
+
+.campo-grupo-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-3);
+}
+.campo-grupo-flex > * {
+  flex: 1 1 200px;
+}
+
+.feedback-flex {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-1);
+}
+
+.modal-overlay-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.modal-topo-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--espaco-3);
+}

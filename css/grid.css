@@ -1,0 +1,75 @@
+/* ===================================================
+   GRID SYSTEM — 12 colunas + breakpoints
+   =================================================== */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-colunas), 1fr);
+  gap: var(--grid-gap);
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--espaco-4);
+  grid-template-areas:
+    "header header header header header header header header header header header header"
+    "nav    nav    main   main   main   main   main   main   main   main   aside  aside"
+    "footer footer footer footer footer footer footer footer footer footer footer footer";
+}
+
+.area-header  { grid-area: header; }
+.area-nav     { grid-area: nav; }
+.area-main    { grid-area: main; }
+.area-aside   { grid-area: aside; }
+.area-footer  { grid-area: footer; }
+
+.col-2  { grid-column: span 2; }
+.col-3  { grid-column: span 3; }
+.col-4  { grid-column: span 4; }
+.col-6  { grid-column: span 6; }
+.col-8  { grid-column: span 8; }
+.col-12 { grid-column: span 12; }
+
+/* 1. Mobile pequeno — até 480px */
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-areas:
+      "header header header header header header header header header header header header"
+      "main   main   main   main   main   main   main   main   main   main   main   main"
+      "aside  aside  aside  aside  aside  aside  aside  aside  aside  aside  aside  aside"
+      "nav    nav    nav    nav    nav    nav    nav    nav    nav    nav    nav    nav"
+      "footer footer footer footer footer footer footer footer footer footer footer footer";
+    gap: var(--espaco-3);
+  }
+  .col-2, .col-3, .col-4, .col-6, .col-8 { grid-column: span 12; }
+}
+
+/* 2. Mobile grande / phablet — 481px a 767px */
+@media (min-width: 481px) and (max-width: 767px) {
+  .grid-container { gap: var(--espaco-3); }
+  .col-3, .col-4 { grid-column: span 6; }
+  .col-2 { grid-column: span 4; }
+}
+
+/* 3. Tablet — 768px a 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid-container {
+    grid-template-areas:
+      "header header header header header header header header header header header header"
+      "nav    nav    main   main   main   main   main   main   main   main   main   main"
+      "footer footer footer footer footer footer footer footer footer footer footer footer";
+  }
+  .area-aside { display: none; }
+  .col-3 { grid-column: span 4; }
+}
+
+/* 4. Desktop — 1024px a 1439px */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .grid-container { gap: var(--espaco-4); }
+}
+
+/* 5. Desktop panorâmico — a partir de 1440px */
+@media (min-width: 1440px) {
+  :root { --container-max: 1440px; }
+  .grid-container { gap: var(--espaco-5); }
+  .area-aside { grid-column: span 3; }
+  .area-main  { grid-column: span 7; }
+}

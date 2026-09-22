@@ -1,0 +1,57 @@
+/* ===================================================
+   DESIGN SYSTEM — Variáveis globais
+   =================================================== */
+
+:root {
+  /* Cores primárias */
+  --cor-primaria-500: #2D5BFF;
+  --cor-primaria-600: #1A3FCC;
+  --cor-primaria-100: #E1E8FF;
+
+  /* Cores secundárias */
+  --cor-secundaria-500: #2E9E6B;
+  --cor-secundaria-600: #227A52;
+  --cor-secundaria-100: #DEF3E8;
+
+  /* Cores neutras */
+  --cor-neutra-900: #14161A;
+  --cor-neutra-600: #565B62;
+  --cor-neutra-300: #C7CCD1;
+  --cor-neutra-100: #F4F6FB;
+  --cor-neutra-0:   #FFFFFF;
+
+  /* Feedback */
+  --cor-erro-500:   #C0392B;
+  --cor-erro-100:   #FBEAE8;
+  --cor-alerta-500: #B8860B;
+  --cor-alerta-100: #FBF3DD;
+
+  /* Tipografia */
+  --fonte-display: 'Space Grotesk', system-ui, sans-serif;
+  --fonte-base: 'Inter', system-ui, sans-serif;
+
+  --fonte-tamanho-1: 2.441rem;  /* h1 */
+  --fonte-tamanho-2: 1.953rem;  /* h2 */
+  --fonte-tamanho-3: 1.563rem;  /* h3 */
+  --fonte-tamanho-4: 1rem;      /* corpo */
+  --fonte-tamanho-5: 0.8rem;    /* legenda */
+
+  --linha-altura-titulo: 1.2;
+  --linha-altura-corpo: 1.6;
+
+  /* Espaçamentos — base 8 */
+  --espaco-1: 0.25rem;
+  --espaco-2: 0.5rem;
+  --espaco-3: 1rem;
+  --espaco-4: 1.5rem;
+  --espaco-5: 2rem;
+  --espaco-6: 3rem;
+  --espaco-7: 4rem;
+
+  --raio-borda: 8px;
+  --foco-outline: 3px solid var(--cor-secundaria-500);
+
+  --grid-colunas: 12;
+  --grid-gap: var(--espaco-4);
+  --container-max: 1200px;
+}
